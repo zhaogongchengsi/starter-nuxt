@@ -1,0 +1,27 @@
+{
+  "name": "starter-nuxt",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "nuxt test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@unocss/reset": "^0.51.4",
+    "nuxt": "^3.4.1",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@unocss/nuxt": "^0.51.4",
+    "sass": "^1.62.0",
+    "unocss": "^0.51.4"
+  }
+}
