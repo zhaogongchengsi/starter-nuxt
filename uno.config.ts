@@ -1,4 +1,26 @@
-// uno.config.ts
-import { defineConfig } from "unocss";
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetTypography,
+  presetUno,
+  presetWebFonts,
+  transformerDirectives,
+  transformerVariantGroup,
+} from "unocss";
 
-export default defineConfig({});
+const darkMode = "class";
+
+export default defineConfig({
+  presets: [
+    presetUno({ dark: darkMode }),
+    presetAttributify({ dark: darkMode }),
+    presetIcons(),
+    presetTypography(),
+    presetWebFonts(),
+  ],
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup(),
+  ],
+});
