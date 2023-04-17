@@ -1,7 +1,7 @@
 <template>
-	<div class="w-full bg-white dark:bg-#0C0C0C text-black dark:text-white">
+	<button class="py-2 px-5">
 		<slot></slot>
-	</div>
+	</button>
 </template>
 <script setup lang='ts'>
 

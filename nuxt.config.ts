@@ -3,7 +3,10 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@pinia/nuxt",
     "@vueuse/nuxt",
-    "@nuxtjs/color-mode"
+    "@nuxtjs/color-mode",
+  ],
+  components: [
+    "~/components",
   ],
   css: [
     "~/assets/variable.scss",

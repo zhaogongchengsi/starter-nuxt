@@ -1,34 +1,27 @@
 <template>
 	<div class="h-screen flex items-center justify-center flex-col">
 
-		<h1 class="dark:text-#fff">{{ appConfig.title }}</h1>
+		<h1 class="dark:text-#fff text-15 font-600">{{ appConfig.title }}</h1>
 
-		<a href="#" class="logo">
+		<a href="#" class="rounded-2xl bg-black w-60 m-20">
 			<img src="/icon.png" alt="">
 		</a>
 
-		{{ data }}
+		<ColorMode />
 
-		<button @click="setDarkMode">切换黑色</button>
+		<ul>
+			<li v-for="(item, i) in data" :key="i">
+				<a :href="item.link" class="block">
+					<span>{{ item.name }}</span>
+				</a>
+			</li>
+		</ul>
 
 	</div>
 </template>
 <script setup lang='ts'>
-
 const appConfig = useAppConfig() as { title: string }
-const { data } = useFetch("/api/hello")
-
-const theme = useColorMode()
-
-const setDarkMode = () => {
-	if (theme.preference === 'dark') {
-		theme.preference = 'light'
-	} else {
-		theme.preference = 'dark'
-	}
-}
-
-
+const { data } = await useFetch<{ name: string, link: string, icon: string }[]>('/api/hello')
 
 </script>
 <style lang='scss'>
