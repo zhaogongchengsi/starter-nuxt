@@ -1,4 +1,13 @@
-# Starter Nuxt
+
+<h1 align=center>Starter Nuxt</h1>
+
+<p align=center >
+	<img src="./public/preview.png" alt="preview" />
+</p>
+
+```sh
+git clone https://github.com/zhaogongchengsi/starter-nuxt.git my-app
+```
 
 ## Features
 
@@ -8,8 +17,8 @@
 
 ### Modules
 
-- [`unocss/nuxt`](https://unocss.dev/integrations/nuxt),
-- [`pinia/nuxt`](https://nuxt.com/modules/pinia),
-- [`vueuse/nuxt`](https://vueuse.org/guide/),
-- [`nuxtjs/color-mode`](https://color-mode.nuxtjs.org/)
-- [`tabler-icons`](https://tabler-icons.io/)
+- [✨ `unocss/nuxt`](https://unocss.dev/integrations/nuxt)
+- [🎉 `pinia/nuxt`](https://nuxt.com/modules/pinia)
+- [🎃 `vueuse/nuxt`](https://vueuse.org/guide/)
+- [🎆 `nuxtjs/color-mode`](https://color-mode.nuxtjs.org/)
+- [🎨 `tabler-icons`](https://tabler-icons.io/)

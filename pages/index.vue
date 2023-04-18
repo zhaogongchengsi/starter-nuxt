@@ -9,9 +9,9 @@
 
 		<ColorMode />
 
-		<ul>
-			<li v-for="(item, i) in data" :key="i">
-				<a :href="item.link" class="block">
+		<ul class="m-10">
+			<li class="my-5 text-5 hover:text-cyan" v-for="(item, i) in data" :key="i">
+				<a target="_blank" :href="item.link" class="block">
 					<span>{{ item.name }}</span>
 				</a>
 			</li>
