@@ -7,6 +7,10 @@
 </template>
 <script setup lang='ts'>
 
+definePageMeta({
+	title: "Home | 首页"
+})
+
 const getUserInfo = async () => {
 	const { data } = await useFetch("api/getinfo")
 	console.log(data)

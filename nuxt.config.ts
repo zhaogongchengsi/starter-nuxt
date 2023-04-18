@@ -23,10 +23,10 @@ export default defineNuxtConfig({
     head: {
       viewport: "width=device-width,initial-scale=1",
       link: [
-        { rel: "icon", type: "image/svg+xml", href: "/nuxt.svg" },
-        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        { rel: "icon", type: "image/svg+xml", href: "/logo.svg" },
+        // { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       ],
-      title: "Nuxt Starter",
+      titleTemplate: (title) => `ZZH | ${title}`,
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "description", content: "Nuxt Starter" },
