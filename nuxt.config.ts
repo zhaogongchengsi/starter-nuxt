@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       options: {
         target: "esnext",
       },
-    }
+    },
   },
 
   devServer: {
@@ -50,11 +50,14 @@ export default defineNuxtConfig({
     host: "localhost",
   },
 
-  imports:{
-    dirs: ['~/composables']
+  imports: {
+    dirs: ["~/composables"],
   },
 
   runtimeConfig: {
-    key: process.env.pwd,
+    github: {
+      user: process.env.GITHUB_USER_NAME,
+      token: process.env.GITHUB_TOKEN
+    },
   },
 });

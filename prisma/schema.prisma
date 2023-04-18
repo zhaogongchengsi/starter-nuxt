@@ -19,4 +19,5 @@ model Blog {
   likes     Int      @default(0)
   shares    Int      @default(0)
   views     Int      @default(0)
+  state     Int      @default(0) // 0 - 待审核 1 - 审核通过发布
 }
