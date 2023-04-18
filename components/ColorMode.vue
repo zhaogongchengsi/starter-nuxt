@@ -1,5 +1,5 @@
 <template>
-	<button @click="setDarkMode" class="w-10 h-10 text-black dark:text-white">
+	<button @click="setDarkMode" class="sm:w-10 sm:h-10 w-6 h-6 text-black dark:text-white">
 		<ClientOnly>
 			<span v-if="theme.value === 'dark'" class="block w-full h-full i-tabler-moon"></span>
 			<span v-if="theme.value === 'light'" class="block w-full h-full i-tabler-moon-off"></span>
