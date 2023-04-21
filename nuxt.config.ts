@@ -1,20 +1,9 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  modules: [
-    "@unocss/nuxt",
-    "@pinia/nuxt",
-    "@vueuse/nuxt",
-    "@nuxtjs/color-mode",
-  ],
-  components: [
-    "~/components",
-  ],
-  css: [
-    "~/assets/variable.scss",
-    "@unocss/reset/tailwind.css",
-    "~/assets/main.scss",
-  ],
+  modules: ["@unocss/nuxt", "@pinia/nuxt", "@vueuse/nuxt", "@nuxtjs/color-mode"],
+  components: ["~/components"],
+  css: ["~/assets/variable.scss", "@unocss/reset/tailwind.css" ,"~/assets/main.scss"],
   // @ts-ignore
   colorMode: {
     classSuffix: "",
@@ -31,9 +20,7 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "description", content: "Nuxt Starter" },
       ],
-      noscript: [
-        { children: "JavaScript is required" },
-      ],
+      noscript: [{ children: "JavaScript is required" }],
     },
   },
 
@@ -57,7 +44,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     github: {
       user: process.env.GITHUB_USER_NAME,
-      token: process.env.GITHUB_TOKEN
+      token: process.env.GITHUB_TOKEN,
     },
+    issueToken: process.env.ISSUETOKEN,
   },
 });

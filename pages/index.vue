@@ -2,6 +2,7 @@
 	<div class="container h-screen flex items-center justify-center flex-col">
 
 		<button @click="getUserInfo">获取个人信息</button>
+		<button @click="getAllRepos">获取所有的仓库</button>
 
 	</div>
 </template>
@@ -16,6 +17,10 @@ const getUserInfo = async () => {
 	console.log(data)
 }
 
+const getAllRepos = async () => {
+	const { data } = await useFetch("api/getAllRepos")
+	console.log(data.value)
+}
 
 </script>
 <style lang='scss'>
