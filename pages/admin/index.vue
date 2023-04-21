@@ -2,7 +2,7 @@
 	<div class="flex flex-col items-center">
 		<div class="flex items-center">
 			<span class="icon md:icon mr-8 i-tabler-pencil-plus"></span>
-			<h1 class="text-7 md:text-10 font-600"> Create Blog</h1>
+			<h1 class="text-7 md:text-10 font-600 text-green-800"> Create Blog</h1>
 		</div>
 		<div class="w-full m-10  md:p-5 flex flex-col gap-6 md:gap-8">
 			<div class="icon i-tabler-h-1" />
@@ -31,7 +31,7 @@
 					type="password" placeholder="Please enter issue token">
 			</div>
 
-			<button
+			<button :disabled="isOpen"
 				class="w-full h-10 md:h-18 text-3 bg-red-600 rounded-2xl md:text-6 hover:shadow hover:md:shadow-md text-white outline- flex  justify-center items-center"
 				@click="submit">
 				<div :class="[isLoading ? 'i-tabler-loader rotate' : 'i-tabler-cloud-upload', 'mr-8 icon text-white']" />
@@ -39,10 +39,17 @@
 			</button>
 		</div>
 
+		<div v-if="isOpen" class="fixed top-10 inset-x-0 mx-auto flex justify-center">
+			<div
+				class="border py-2 px-4 border-green-600 rounded-lg bg-white dark:bg-black font-sans text-lg font-medium text-green-800">
+				{{ dmessage }}
+			</div>
+		</div>
 	</div>
 </template>
 <script setup lang='ts'>
 import { type PublishInformation } from '~/types';
+
 definePageMeta({
 	layout: "admin"
 })
@@ -50,10 +57,12 @@ definePageMeta({
 const issueInfo = reactive<PublishInformation>({
 	title: '',
 	githubAddress: '',
-	password: 'zhaogongchengsi..3132'
+	password: ''
 })
 
 const isLoading = ref(false)
+const isOpen = ref(false)
+const dmessage = ref('')
 
 const submit = async () => {
 	isLoading.value = true
@@ -64,13 +73,18 @@ const submit = async () => {
 
 	isLoading.value = false
 
-	const { state, message } = data.value as any
+	const { message, state } = data.value as any
 
-	if (state != 0) {
-		alert('密码错误')
-	} else {
-		alert(message)
-	}
+	dmessage.value = message
+	isOpen.value = true
+
+	setTimeout(() => {
+		isOpen.value = false
+	}, 2 * 1000)
+
+	issueInfo.password = ''
+	issueInfo.githubAddress = ''
+	issueInfo.title = ''
 
 }
 

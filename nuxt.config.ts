@@ -3,7 +3,7 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
   modules: ["@unocss/nuxt", "@pinia/nuxt", "@vueuse/nuxt", "@nuxtjs/color-mode"],
   components: ["~/components"],
-  css: ["~/assets/variable.scss", "@unocss/reset/tailwind.css" ,"~/assets/main.scss"],
+  css: ["~/assets/variable.scss", "@unocss/reset/tailwind.css", "~/assets/main.scss"],
   // @ts-ignore
   colorMode: {
     classSuffix: "",
